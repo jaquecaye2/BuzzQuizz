@@ -112,6 +112,28 @@ div.resposta h4{
     line-height: 35px;
 }
 
+div.respostaCerta h4{
+    color: #009C22;
+}
+
+div.respostaCerta img{
+    border: 3px solid #009C22;
+}
+
+div.respostaErrada{
+    position: relative;
+}
+
+div.respostaErrada div.desfocarDiv{
+    position: absolute;
+    top: 0;
+    background-color: rgba(255, 255, 255, 0.6);
+}
+
+div.respostaErrada h4{
+    color: rgba(255, 75, 75, 0.6);
+}
+
 /* Container com a resposta do Quizz */
 
 div.respostaQuiz{
@@ -298,7 +320,7 @@ div.botoes button.botaoVoltarHome:hover{
     }
     
     div.tituloResposta h3{
-        font-size: 19px;
+        font-size: 17px;
     }
     
     div.textoResposta{
@@ -326,6 +348,6 @@ div.botoes button.botaoVoltarHome:hover{
     }
     
     div.textoRespostaQuiz p{
-        font-size: 17px;
+        font-size: 16px;
     }
 }
