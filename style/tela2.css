@@ -112,6 +112,8 @@ div.resposta h4{
     line-height: 35px;
 }
 
+/* Container com a resposta do Quizz */
+
 div.respostaQuiz{
     background-color: #FFF;
     width: 100%;
@@ -150,7 +152,7 @@ div.textoResposta div.imagemResposta{
 div.imagemResposta img{
     width: 100%;
     height: 100%;
-    object-fit: cover;
+    object-fit: fill;
 }
 
 div.textoRespostaQuiz{
@@ -163,6 +165,8 @@ div.textoRespostaQuiz p{
     font-weight: 700;
     line-height: 25px;
 }
+
+/* Botões de ações */
 
 div.botoes{
     height: 200px;
@@ -207,4 +211,112 @@ div.botoes button.botaoVoltarHome{
 div.botoes button.botaoVoltarHome:hover{
     color: #818181;
     border: 1px solid #818181;
+}
+
+@media (max-width: 1100px){
+    div.tituloQuizComImagem{
+        height: 170px;
+    }
+
+    div.tituloQuizComImagem p{
+        font-size: 27px;
+    }
+
+    div.containerTela2{
+        width: 85%;
+        margin: 0 auto;
+    }
+
+    div.pergunta{
+        margin: 30px 0px;
+        padding: 15px;
+    }
+
+    div.pergunta h3{
+        font-size: 19px;
+    }
+
+    
+    div.resposta{
+        margin: 7px 0px;
+    }
+
+    div.resposta h4{
+        font-size: 16px;
+        line-height: 25px;
+    }
+
+    div.respostaQuiz{
+        margin: 30px 0px;
+        padding: 15px;
+    }
+    
+    div.tituloResposta h3{
+        font-size: 19px;
+    }
+
+    div.textoRespostaQuiz p{
+        font-size: 18px;
+    }
+}
+
+@media (max-width: 600px){
+    div.tituloQuizComImagem{
+        height: 142px;
+    }
+
+    div.tituloQuizComImagem p{
+        font-size: 20px;
+    }
+
+    div.containerTela2{
+        width: 95%;
+        margin: 0 auto;
+    }
+
+    div.pergunta{
+        margin: 20px 0px;
+        padding: 10px;
+    }
+
+    div.pergunta h3{
+        font-size: 17px;
+    }
+
+    div.resposta{
+        margin: 5px 0px;
+    }
+
+    div.resposta h4{
+        font-size: 13px;
+        line-height: 20px;
+    }
+
+    div.respostaQuiz{
+        margin: 20px 0px;
+        padding: 10px;
+    }
+    
+    div.tituloResposta h3{
+        font-size: 19px;
+    }
+    
+    div.textoResposta{
+        display: flex;
+        flex-direction: column;
+    }
+    
+    div.textoResposta div.imagemResposta{
+        width: 100%;
+        height: 273px;
+    }
+    
+    div.textoRespostaQuiz{
+        margin: 15px;
+        width: 100%;
+    }
+    
+    div.textoRespostaQuiz p{
+        font-size: 17px;
+    }
 }
