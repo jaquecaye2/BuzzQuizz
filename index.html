@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BuzzQuizz</title>
+    <link rel="stylesheet" href="style/reset.css">
+    <link rel="stylesheet" href="style/style.css">
+    <link rel="stylesheet" href="style/tela1.css">
+    <link rel="stylesheet" href="style/tela2.css">
+    <link rel="stylesheet" href="style/tela3.css">
+</head>
+<body>
+    <!-- Tela 1 -->
+    <section class="tela1">
+        <!-- Cabeçalho -->
+        <header>
+            <h1>BuzzQuizz</h1>
+        </header>
+        <div class="containerTela1">
+            <!-- Container Criar Quizz -->
+            <div class="criarQuizz">
+                <div class="conteudoCaixaCriarQuiz">
+                    <div>
+                        <p>Você não criou nenhum quizz ainda :(</p>
+                    </div>
+                    <button>Criar Quizz</button>
+                </div>
+            </div>
+            <!-- Container Seus Quizzes -->
+            <div class="quizzes">
+                <div class="titleQuizzes">
+                    <h2>Seus Quizzes</h2>
+                    <button>+</button>
+                </div>
+                <div class="containerQuizzes">
+                    <div class="quizz" onclick="abrirQuiz(this)">
+                        <img src="images/image5.jpg" alt="">
+                        <div class="degrade"></div>
+                        <p>O quão Potterhead é você?</p>
+                    </div>
+                    <div class="quizz" onclick="abrirQuiz(this)">
+                        <img src="images/image5.jpg" alt="">
+                        <div class="degrade"></div>
+                        <p>É ex-BBB ou ex-De férias com o Ex?</p>
+                    </div>
+                </div>
+            </div>
+            <!-- Container Todos os Quizzes-->
+            <div class="quizzes">
+                <div class="titleQuizzes">
+                    <h2>Todos os Quizzes</h2>
+                </div>
+                <div class="containerQuizzes">
+                    <div class="quizz" onclick="abrirQuiz(this)">
+                        <img src="images/image5.jpg" alt="">
+                        <div class="degrade"></div>
+                        <p>Acerte os personagens corretos dos Simpsons e prove seu amor!</p>
+                    </div>
+                    <div class="quizz" onclick="abrirQuiz(this)">
+                        <img src="images/image5.jpg" alt="">
+                        <div class="degrade"></div>
+                        <p>O quanto você é de boas?</p>
+                    </div>
+                    <div class="quizz" onclick="abrirQuiz(this)">
+                        <img src="images/image5.jpg" alt="">
+                        <div class="degrade"></div>
+                        <p>Acerte os personagens corretos dos Simpsons e prove seu amor!</p>
+                    </div>
+                    <div class="quizz" onclick="abrirQuiz(this)">
+                        <img src="images/image5.jpg" alt="">
+                        <div class="degrade"></div>
+                        <p>O quanto você é de boas?</p>
+                    </div>
+                    <div class="quizz" onclick="abrirQuiz(this)">
+                        <img src="images/image5.jpg" alt="">
+                        <div class="degrade"></div>
+                        <p>Acerte os personagens corretos dos Simpsons e prove seu amor!</p>
+                    </div>
+                    <div class="quizz" onclick="abrirQuiz(this)">
+                        <img src="images/image5.jpg" alt="">
+                        <div class="degrade"></div>
+                        <p>O quanto você é de boas?</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Tela 2 -->
+    <section class="tela2 escondido">
+        <!-- Cabeçalho -->
+        <header>
+            <h1>BuzzQuizz</h1>
+        </header>
+        <!-- Quadro com imagem e título do Quiz -->
+        <div class="tituloQuizComImagem">
+            <img src="images/image5.jpg" alt="">
+            <div class="desfocarImagem"></div>
+            <div class="tituloQuiz">
+                <p>O quão Potterhead é você?</p>
+            </div>
+        </div>
+        <div class="containerTela2">
+            <!-- Container com as perguntas -->
+            <div class="pergunta">
+                <div class="tituloPergunta corPergunta1">
+                    <h3>Em qual animal Olho-Tonto Moody transfigurou Malfoy?</h3>
+                </div>
+                <div class="respostas">
+                    <div class="resposta">
+                        <div>
+                            <img src="images/image5.jpg" alt="">
+                        </div>
+                        <h4>Gatíneo</h4>
+                    </div>
+                    <div class="resposta">
+                        <div>
+                            <img src="images/image5.jpg" alt="">
+                        </div>
+                        <h4>Ratata</h4>
+                    </div>
+                    <div class="resposta">
+                        <div>
+                            <img src="images/image5.jpg" alt="">
+                        </div>
+                        <h4>Sapo gordo</h4>
+                    </div>
+                    <div class="resposta">
+                        <div>
+                            <img src="images/image5.jpg" alt="">
+                        </div>
+                        <h4>Mustela putorius (o Furão)</h4>
+                    </div>
+                </div>
+            </div>
+
+            <div class="pergunta">
+                <div class="tituloPergunta corPergunta2">
+                    <h3>Em qual animal Olho-Tonto Moody transfigurou Malfoy?</h3>
+                </div>
+                <div class="respostas">
+                    <div class="resposta">
+                        <div>
+                            <img src="images/image5.jpg" alt="">
+                        </div>
+                        <h4>Gatíneo</h4>
+                    </div>
+                    <div class="resposta">
+                        <div>
+                            <img src="images/image5.jpg" alt="">
+                        </div>
+                        <h4>Ratata</h4>
+                    </div>
+                    <div class="resposta">
+                        <div>
+                            <img src="images/image5.jpg" alt="">
+                        </div>
+                        <h4>Sapo gordo</h4>
+                    </div>
+                    <div class="resposta">
+                        <div>
+                            <img src="images/image5.jpg" alt="">
+                        </div>
+                        <h4>Mustela putorius (o Furão)</h4>
+                    </div>
+                </div>
+            </div>
+
+            <div class="respostaQuiz">
+                <div class="tituloResposta corResposta">
+                    <h3>88% de acerto: Você é praticamente um aluno de Hogwarts!</h3>
+                </div>
+                <div class="textoResposta">
+                    <div class="imagemResposta">
+                        <img src="images/image 10.png" alt="">
+                    </div>
+                    <div class="textoRespostaQuiz">
+                        <p>Parabéns Potterhead! Bem-vindx a Hogwarts, aproveite o loop infinito de comida e clique no botão abaixo para usar o vira-tempo e reiniciar este teste.</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="botoes">
+                <button class="botaoReiniciar">Reiniciar Quizz</button>
+                <button class="botaoVoltarHome" onclick="voltarHome()">Voltar para home</button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Tela 3 -->
+    <section class="tela3 escondido">
+        <header>
+            <h1>BuzzQuizz</h1>
+        </header>
+        
+        <div class="containerTela3">
+        
+        </div>
+    </section>
+
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+    <script src="javascript/navegarEntreTelas.js"></script>
+</body>
+</html>

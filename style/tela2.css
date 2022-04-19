@@ -1,0 +1,210 @@
+/* TELA 2 */
+section.tela2{
+    position: fixed;
+    top: 0px;
+    left: 0;
+    background-color: #FAFAFA;
+}
+
+/* Quadro com imagem e título do Quiz */
+
+div.tituloQuizComImagem{
+    margin-top: 69px;
+    width: 100%;
+    height: 227px;
+    position: relative;
+}
+
+div.tituloQuizComImagem img{
+    border-radius: 5px;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+div.desfocarImagem{
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.4);
+}
+
+div.tituloQuizComImagem div.tituloQuiz{
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+div.tituloQuizComImagem p{
+    font-size: 39px;
+    color: #FFF;
+}
+
+/* Container com as perguntas */
+div.containerTela2{
+    width: 60%;
+    margin: 0 auto;
+}
+
+div.pergunta{
+    background-color: #FFF;
+    width: 100%;
+    margin: 42px 0px;
+    padding: 27px 35px;
+}
+
+div.pergunta div.tituloPergunta{
+    height: 138px;
+    width: 100%;
+    margin-bottom: 18px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+div.pergunta div.corPergunta1{
+    background-color: #434CA0;
+}
+
+div.pergunta div.corPergunta2{
+    background-color: #A0438D;
+}
+
+div.pergunta h3{
+    color: #FFF;
+    font-size: 23px;
+    font-weight: 700;
+}
+
+div.respostas{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+
+div.resposta{
+    width: 48%;
+    margin: 9px 0px;
+    cursor: pointer;
+}
+
+div.resposta div{
+    width: 100%;
+    height: 175px;
+}
+
+div.resposta img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+div.resposta h4{
+    font-size: 20px;
+    font-weight: bold;
+    line-height: 35px;
+}
+
+div.respostaQuiz{
+    background-color: #FFF;
+    width: 100%;
+    margin: 42px 0px;
+    padding: 27px 35px;
+}
+
+div.tituloResposta{
+    height: 100px;
+    width: 100%;
+    margin-bottom: 18px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+div.corResposta{
+    background-color: #EC362D;
+}
+
+div.tituloResposta h3{
+    color: #FFF;
+    font-size: 23px;
+    font-weight: 700;
+}
+
+div.textoResposta{
+    display: flex;
+}
+
+div.textoResposta div.imagemResposta{
+    width: 50%;
+    height: 273px;
+}
+
+div.imagemResposta img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+div.textoRespostaQuiz{
+    margin: 0 15px;
+    width: 50%;
+}
+
+div.textoRespostaQuiz p{
+    font-size: 19px;
+    font-weight: 700;
+    line-height: 25px;
+}
+
+div.botoes{
+    height: 200px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 50px;
+}
+
+div.botoes button.botaoReiniciar{
+    background-color: #EC362D;
+    width: 260px;
+    height: 52px;
+    margin-bottom: 30px;
+    border-radius: 15px;
+    border: none;
+    color: #FFF;
+    font-size: 21px;
+    text-align: center;
+    cursor: pointer;
+}
+
+div.botoes button.botaoReiniciar:hover{
+    background-color: #FFF;
+    border: 1px solid #EC362D;
+    color: #EC362D;
+}
+
+div.botoes button.botaoVoltarHome{
+    border: none;
+    color: #818181;
+    width: 220px;
+    height: 44px;
+    text-align: center;
+    background-color: #FAFAFA;
+    font-size: 21px;
+    cursor: pointer;
+    border-radius: 15px;
+}
+
+div.botoes button.botaoVoltarHome:hover{
+    color: #818181;
+    border: 1px solid #818181;
+}
