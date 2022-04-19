@@ -112,12 +112,14 @@ div.resposta h4{
     line-height: 35px;
 }
 
+/* Verificar se a resposta esta certa ou errada */
+
 div.respostaCerta h4{
     color: #009C22;
 }
 
 div.respostaCerta img{
-    border: 3px solid #009C22;
+    border: 4px solid #009C22;
 }
 
 div.respostaErrada{

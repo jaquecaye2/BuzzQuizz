@@ -56,6 +56,10 @@ div.quizzes{
     margin: 77px 0px;
 }
 
+div.margin-top{
+    margin-top: 146px;
+}
+
 div.quizzes div.titleQuizzes{
     display: flex;
     align-items: center;
