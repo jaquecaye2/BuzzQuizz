@@ -38,6 +38,7 @@ function renderizarQuizzClicado (resposta) {
     const objQuizz = resposta.data;
     let quizzClicadoImg = objQuizz.image;
     let quizzClicadoTitulo = objQuizz.title;
+    let quizzClicadoPerguntas = objQuizz.questions;
 
     document.querySelector(".tituloQuizComImagem").innerHTML = "";
 
@@ -46,7 +47,38 @@ function renderizarQuizzClicado (resposta) {
         <div class="desfocarImagem"></div>
         <div class="tituloQuiz">
         <p>${quizzClicadoTitulo}</p>
-        </div>`
+        </div>`;
+
+    document.querySelector(".containerTela2").innerHTML = "";
+
+    for (let i = 0; i < quizzClicadoPerguntas.length; i++) {
+        let pergunta = quizzClicadoPerguntas[i].title;
+        let textoHTML = "";
+        
+        textoHTML += `
+            <div class="pergunta">
+                <div class="tituloPergunta corPergunta1">
+                    <h3>${pergunta}</h3>
+                </div>
+                <div class="containerRespostas">`;
+
+
+        for (let k = 0; k < quizzClicadoPerguntas[i].answers.length; k++) {
+            let imgResposta = quizzClicadoPerguntas[i].answers[k].image;
+            let textoResposta = quizzClicadoPerguntas[i].answers[k].text;
+            textoHTML += `
+                <div class="resposta">
+                    <div>
+                        <img src=${imgResposta} alt="">
+                    </div>
+                    <h4>${textoResposta}</h4>
+                    <div class="desfocarDiv escondido"></div>
+                </div>`;
+
+        }
+        textoHTML += `</div></div>`;
+        document.querySelector(".containerTela2").innerHTML += textoHTML;
+    }
 
 
 }
