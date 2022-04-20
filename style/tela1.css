@@ -101,7 +101,7 @@ div.containerQuizzes{
 div.quizz{
     border-radius: 5px;
     height: 181px;
-    width: 31.5%;
+    width: 340px;
     margin: 7.5px;
     position: relative;
     cursor: pointer;
@@ -109,7 +109,7 @@ div.quizz{
 
 div.quizz img{
     border-radius: 5px;
-    width: 100%;
+    width: 340px;
     height: 100%;
     object-fit: cover;
 }
@@ -119,9 +119,9 @@ div.quizz div.degrade{
     position: absolute;
     top: 0;
     left: 0;
-    width: 100%;
+    width: 340px;
     height: 100%;
-    background-image: linear-gradient(rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.6));
+    background-image: linear-gradient(180deg, rgba(255, 255, 255, 0) 0%, rgba(255, 255, 255, 0) 40%, #000000 100%);
 }
 
 div.quizz p{
@@ -142,22 +142,13 @@ div.quizz p{
 
 @media (max-width: 1100px){
     div.containerTela1{
-        width: 90%;
         margin: 0 auto;
     }
 
-    div.containerQuizzes{
-        justify-content: space-between;
-    }
-
-    div.quizz{
-        width: 47.2%;
-    }
 }
 
 @media (max-width: 600px){
     div.containerTela1{
-        width: 95%;
         margin: 0 auto;
     }
 
