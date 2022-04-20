@@ -44,10 +44,3 @@ header h1{
 .escondido{
     display: none;
 }
-
-.teste-git {
-    border: 1px solid blue;
-    border-radius: 10px;
-    background-color: blue;
-    color: black;
-}
