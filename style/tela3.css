@@ -58,7 +58,7 @@ div.form input{
     border-radius: 5px;
     border: 1px solid #D1D1D1;
     font-size: 19px;
-    color: #D1D1D1;
+    color: #818181;
 }
 
 div.form input:first-child{
@@ -71,6 +71,7 @@ div.form input:last-child{
 
 div.form input::placeholder{
     font-style: italic;
+    color: #D1D1D1;
 }
 
 div.quadroQuiz{

@@ -18,14 +18,14 @@ function renderizarQuizzes(resposta) {
 
         document.querySelector(".quizzes-outros").innerHTML += `
             <div class="quizz" onclick="abrirQuiz(this)">
-            <img src=${quizzImg} alt="">
-            <div class="degrade"></div>
-            <p>${quizzTitulo}</p>
-            <h6 class="id-escondido">${quizzID}</h6>
+                <img src=${quizzImg} alt="">
+                <div class="degrade"></div>
+                <p>${quizzTitulo}</p>
+                <h6 class="id-escondido">${quizzID}</h6>
             </div>`
     }
 
-
+    
 }
 
 function carregarQuizClicado (quizzClicado) {

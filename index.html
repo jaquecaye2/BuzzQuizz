@@ -54,37 +54,6 @@
                     <h2>Todos os Quizzes</h2>
                 </div>
                 <div class="containerQuizzes quizzes-outros">
-                    <div class="quizz" onclick="abrirQuiz()">
-                        <img src="images/image5.jpg" alt="">
-                        <div class="degrade"></div>
-                        <p>Acerte os personagens corretos dos Simpsons e prove seu amor!</p>
-                        <h6 class="id-escondido">ID</h6>
-                    </div>
-                    <div class="quizz" onclick="abrirQuiz()">
-                        <img src="images/image5.jpg" alt="">
-                        <div class="degrade"></div>
-                        <p>O quanto você é de boas?</p>
-                    </div>
-                    <div class="quizz" onclick="abrirQuiz()">
-                        <img src="images/image5.jpg" alt="">
-                        <div class="degrade"></div>
-                        <p>Acerte os personagens corretos dos Simpsons e prove seu amor!</p>
-                    </div>
-                    <div class="quizz" onclick="abrirQuiz()">
-                        <img src="images/image5.jpg" alt="">
-                        <div class="degrade"></div>
-                        <p>O quanto você é de boas?</p>
-                    </div>
-                    <div class="quizz" onclick="abrirQuiz()">
-                        <img src="images/image5.jpg" alt="">
-                        <div class="degrade"></div>
-                        <p>Acerte os personagens corretos dos Simpsons e prove seu amor!</p>
-                    </div>
-                    <div class="quizz" onclick="abrirQuiz()">
-                        <img src="images/image5.jpg" alt="">
-                        <div class="degrade"></div>
-                        <p>O quanto você é de boas?</p>
-                    </div>
                 </div>
             </div>
         </div>
@@ -219,12 +188,12 @@
             <div class="paginaCriarQuiz">
                 <h5>Comece pelo começo</h5>
                 <div class="form">
-                    <input type="text" placeholder="Título do seu quizz">
-                    <input type="url" placeholder="URL da imagem do seu quizz">
-                    <input type="number" placeholder="Quantidade de perguntas do quizz">
-                    <input type="number" placeholder="Quantidade de níveis do quizz">
+                    <input type="text" id="tituloQuiz" placeholder="Título do seu quizz" minlength="20">
+                    <input type="url" id="URLimagemQuiz" placeholder="URL da imagem do seu quizz">
+                    <input type="number" id="quantPerguntas" placeholder="Quantidade de perguntas do quizz">
+                    <input type="number" id="quantNiveis" placeholder="Quantidade de níveis do quizz">
                 </div>
-                <button onclick="passarParaTela2Form()">Prosseguir para criar perguntas</button>
+                <button onclick="passarParaTela2Form(); validacaoTelaInfoBasicas()">Prosseguir para criar perguntas</button>
             </div>
         </div>
 
@@ -376,5 +345,6 @@
     <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
     <script src="javascript/navegarEntreTelas.js"></script>
     <script src="javascript/carregarQuizzes.js"></script>
+    <script src="javascript/criarQuiz.js"></script>
 </body>
 </html>
