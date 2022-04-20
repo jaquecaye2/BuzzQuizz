@@ -188,12 +188,12 @@
             <div class="paginaCriarQuiz">
                 <h5>Comece pelo começo</h5>
                 <div class="form">
-                    <input type="text" id="tituloQuiz" placeholder="Título do seu quizz" minlength="20">
-                    <input type="url" id="URLimagemQuiz" placeholder="URL da imagem do seu quizz">
-                    <input type="number" id="quantPerguntas" placeholder="Quantidade de perguntas do quizz">
-                    <input type="number" id="quantNiveis" placeholder="Quantidade de níveis do quizz">
+                    <input type="text" id="tituloQuiz" placeholder="Título do seu quizz" minlength="20" minlength="65" required>
+                    <input type="url" id="URLimagemQuiz" placeholder="URL da imagem do seu quizz" required>
+                    <input type="number" id="quantPerguntas" placeholder="Quantidade de perguntas do quizz" min="3" required>
+                    <input type="number" id="quantNiveis" placeholder="Quantidade de níveis do quizz" min="2" required>
                 </div>
-                <button onclick="passarParaTela2Form(); validacaoTelaInfoBasicas()">Prosseguir para criar perguntas</button>
+                <button onclick="validacaoTelaInfoBasicas()">Prosseguir para criar perguntas</button>
             </div>
         </div>
 
