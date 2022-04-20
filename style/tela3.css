@@ -114,6 +114,18 @@ div.quadroQuiz p{
     align-items: center;
 }
 
+div.criarPergunta{
+    width: 100%;
+}
+
+div.pergunta-fechada{
+    width: 100%;
+}
+
+div.pergunta-aberta{
+    padding-top: 10px;
+}
+
 div.form-fechado{
     display: flex;
     align-items: center;
@@ -170,4 +182,29 @@ div.paginaCriarQuiz button.botaoVoltarHome{
 
 div.paginaCriarQuiz button.botaoVoltarHome:hover{
     border: 1px solid #818181;
+}
+
+@media (max-width: 1100px){
+    
+}
+
+@media (max-width: 600px){
+    div.containerTela3-1{
+        width: 100%;
+    }
+    
+    div.containerTela3-2{
+        width: 100%;
+    }
+    
+    div.containerTela3-3{
+        width: 100%;
+    }
+
+    div.form input{
+        width: 460px;
+        height: 46px;
+        margin: 4.5px 16px;
+        padding: 0 23px;
+    }
 }
