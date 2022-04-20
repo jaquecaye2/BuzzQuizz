@@ -1,4 +1,5 @@
-function abrirQuiz(){
+function abrirQuiz(quizzClicado){
+    carregarQuizClicado(quizzClicado);
     document.querySelector("section.tela2").classList.remove("escondido")
     document.querySelector("section.tela3").classList.add("escondido")
 }

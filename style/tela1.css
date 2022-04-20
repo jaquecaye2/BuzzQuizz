@@ -140,6 +140,10 @@ div.quizz p{
     align-items: center;
 }
 
+.id-escondido {
+    display: none;
+}
+
 @media (max-width: 1100px){
     div.containerTela1{
         margin: 0 auto;
