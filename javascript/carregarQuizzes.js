@@ -62,10 +62,12 @@ function renderizarQuizzClicado (resposta) {
                 </div>
                 <div class="containerRespostas">`;
 
+        const arrayRespostasEmbaralhadas = quizzClicadoPerguntas[i].answers;
+        arrayRespostasEmbaralhadas.sort(comparador);
 
-        for (let k = 0; k < quizzClicadoPerguntas[i].answers.length; k++) {
-            let imgResposta = quizzClicadoPerguntas[i].answers[k].image;
-            let textoResposta = quizzClicadoPerguntas[i].answers[k].text;
+        for (let k = 0; k < arrayRespostasEmbaralhadas.length; k++) {
+            let imgResposta = arrayRespostasEmbaralhadas[k].image;
+            let textoResposta = arrayRespostasEmbaralhadas[k].text;
             textoHTML += `
                 <div class="resposta">
                     <div>
@@ -81,6 +83,10 @@ function renderizarQuizzClicado (resposta) {
     }
 
 
+}
+
+function comparador() { 
+	return Math.random() - 0.5; 
 }
 
 carregarQuizzes();
