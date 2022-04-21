@@ -38,6 +38,14 @@ div.paginaCriarQuiz h5{
     font-weight: bold;
 }
 
+div.perguntas{
+    width: 600px;
+}
+
+div.niveis{
+    width: 600px;
+}
+
 div.paginaCriarQuiz div.form{
     background-color: #FFF;
     width: 100%;
@@ -116,6 +124,10 @@ div.quadroQuiz p{
 }
 
 div.criarPergunta{
+    width: 100%;
+}
+
+div.criarNivel{
     width: 100%;
 }
 

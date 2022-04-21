@@ -32,18 +32,6 @@ function scrolarTopPaginaForm(){
     document.querySelector("div.containerTela3-4").scrollTop = 0
 }
 
-function passarParaTela2Form(){
-    scrolarTopPaginaForm()
-    document.querySelector(".containerTela3-1").classList.add("escondido")
-    document.querySelector(".containerTela3-2").classList.remove("escondido")
-}
-
-function passarParaTela3Form(){
-    scrolarTopPaginaForm()
-    document.querySelector(".containerTela3-2").classList.add("escondido")
-    document.querySelector(".containerTela3-3").classList.remove("escondido")
-}
-
 function passarParaTela4Form(){
     scrolarTopPaginaForm()
     document.querySelector(".containerTela3-3").classList.add("escondido")
