@@ -68,12 +68,14 @@ function renderizarQuizzClicado (resposta) {
         for (let k = 0; k < arrayRespostasEmbaralhadas.length; k++) {
             let imgResposta = arrayRespostasEmbaralhadas[k].image;
             let textoResposta = arrayRespostasEmbaralhadas[k].text;
+            let isCorrectAnswer = arrayRespostasEmbaralhadas[k].isCorrectAnswer;
             textoHTML += `
-                <div class="resposta">
+                <div class="resposta" onclick="verificarResposta(this)">
                     <div>
                         <img src=${imgResposta} alt="">
                     </div>
                     <h4>${textoResposta}</h4>
+                    <h6 class="resposta-escondida">${isCorrectAnswer}</h6>
                     <div class="desfocarDiv escondido"></div>
                 </div>`;
 

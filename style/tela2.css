@@ -231,6 +231,10 @@ div.botoes button.botaoVoltarHome:hover{
     border: 1px solid #818181;
 }
 
+.resposta-escondida {
+    display: none;
+}
+
 @media (max-width: 1100px){
     div.tituloQuizComImagem{
         height: 170px;
