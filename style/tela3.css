@@ -42,6 +42,10 @@ div.perguntas{
     width: 600px;
 }
 
+div.niveis{
+    width: 600px;
+}
+
 div.paginaCriarQuiz div.form{
     background-color: #FFF;
     width: 100%;
