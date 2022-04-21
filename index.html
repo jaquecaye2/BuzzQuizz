@@ -201,79 +201,10 @@
         <div class="containerTela3-2 escondido">
             <div class="paginaCriarQuiz">
                 <h5>Crie suas perguntas</h5>
-                <div class="form">
-                    <h6>Pergunta 1</h6>
-                    <input type="text" placeholder="Texto da pergunta">
-                    <input type="text" placeholder="Cor de fundo da pergunta">
-
-                    <h6>Resposta correta</h6>
-                    <input type="text" placeholder="Resposta correta">
-                    <input type="url" placeholder="URL da imagem">
-
-                    <h6>Respostas incorretas</h6>
-                    <input type="text" placeholder="Resposta incorreta 1">
-                    <input type="url" placeholder="URL da imagem 1">
-                    <input type="text" placeholder="Resposta incorreta 2">
-                    <input type="url" placeholder="URL da imagem 2">
-                    <input type="text" placeholder="Resposta incorreta 3">
-                    <input type="url" placeholder="URL da imagem 3">
+                <div class="perguntas">
                 </div>
 
-                <!-- 
-                    Para abrir a pergunta quando clicar no ícone: 
-                    1° Adicionar a classe escondido na div com classe "pergunta-fechada"
-                    2° Remover a classe escondido da classe "pergunta-aberta"
-                -->
-
-                <div class="criarPergunta">
-                    <div class="pergunta-fechada">
-                        <div class="form form-fechado">
-                            <h6>Pergunta 2</h6>
-                            <ion-icon name="create-outline" onclick="abrirPerguntaForm(this)"></ion-icon>
-                        </div>
-                    </div>
-                    <div class="form pergunta-aberta escondido">
-                        <h6>Pergunta 2</h6>
-                        <input type="text" placeholder="Texto da pergunta">
-                        <input type="text" placeholder="Cor de fundo da pergunta">
-                        <h6>Resposta correta</h6>
-                        <input type="text" placeholder="Resposta correta">
-                        <input type="url" placeholder="URL da imagem">
-                        <h6>Respostas incorretas</h6>
-                        <input type="text" placeholder="Resposta incorreta 1">
-                        <input type="url" placeholder="URL da imagem 1">
-                        <input type="text" placeholder="Resposta incorreta 2">
-                        <input type="url" placeholder="URL da imagem 2">
-                        <input type="text" placeholder="Resposta incorreta 3">
-                        <input type="url" placeholder="URL da imagem 3">
-                    </div>
-                </div>
-
-                <div class="criarPergunta">
-                    <div class="pergunta-fechada">
-                        <div class="form form-fechado">
-                            <h6>Pergunta 3</h6>
-                            <ion-icon name="create-outline" onclick="abrirPerguntaForm(this)"></ion-icon>
-                        </div>
-                    </div>
-                    <div class="form pergunta-aberta escondido">
-                        <h6>Pergunta 3</h6>
-                        <input type="text" placeholder="Texto da pergunta">
-                        <input type="text" placeholder="Cor de fundo da pergunta">
-                        <h6>Resposta correta</h6>
-                        <input type="text" placeholder="Resposta correta">
-                        <input type="url" placeholder="URL da imagem">
-                        <h6>Respostas incorretas</h6>
-                        <input type="text" placeholder="Resposta incorreta 1">
-                        <input type="url" placeholder="URL da imagem 1">
-                        <input type="text" placeholder="Resposta incorreta 2">
-                        <input type="url" placeholder="URL da imagem 2">
-                        <input type="text" placeholder="Resposta incorreta 3">
-                        <input type="url" placeholder="URL da imagem 3">
-                    </div>
-                </div>
-
-                <button onclick="passarParaTela3Form()">Prosseguir para criar níveis</button>
+                <button onclick="validacaoTelaPerguntasQuiz()">Prosseguir para criar níveis</button>
             </div>
         </div>
 
@@ -281,15 +212,23 @@
         <div class="containerTela3-3 escondido">
             <div class="paginaCriarQuiz">
                 <h5>Agora, decida os níveis</h5>
-                <div class="form">
-                    <h6>Nível 1</h6>
-                    <input type="text" placeholder="Título do nível">
-                    <input type="number" placeholder="% de acerto mínima">
-                    <input type="url" placeholder="URL da imagem do nível">
-                    <input type="text" placeholder="Descrição do nível">
+                <div class="criarNivel">
+                    <div class="pergunta-fechada">
+                        <div class="form form-fechado">
+                            <h6>Nível 1</h6>
+                            <ion-icon name="create-outline" onclick="abrirPerguntaForm(this)"></ion-icon>
+                        </div>
+                    </div>
+                    <div class="form pergunta-aberta escondido">
+                        <h6>Nível 1</h6>
+                        <input type="text" placeholder="Título do nível">
+                        <input type="number" placeholder="% de acerto mínima">
+                        <input type="url" placeholder="URL da imagem do nível">
+                        <input type="text" placeholder="Descrição do nível">
+                    </div>
                 </div>
 
-                <div class="criarPergunta">
+                <div class="criarNivel">
                     <div class="pergunta-fechada">
                         <div class="form form-fechado">
                             <h6>Nível 2</h6>
@@ -305,7 +244,7 @@
                     </div>
                 </div>
 
-                <div class="criarPergunta">
+                <div class="criarNivel">
                     <div class="pergunta-fechada">
                         <div class="form form-fechado">
                             <h6>Nível 3</h6>
