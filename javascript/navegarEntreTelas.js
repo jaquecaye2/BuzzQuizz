@@ -16,6 +16,7 @@ function abrirQuiz(quizzClicado){
 
 function voltarHome(){
     zerarEscondido()
+    // colocar um window.reload aqui
     document.querySelector("section.tela1").scrollTop = 0
 }
 

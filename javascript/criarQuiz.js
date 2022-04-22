@@ -225,11 +225,10 @@ function validacaoTelaNiveisQuiz(){
         document.querySelector(".containerTela3-3").classList.add("escondido")
         document.querySelector(".containerTela3-4").classList.remove("escondido")
         enviarQuizServidor()
+        encontrarIdQuizCriado()
 }
 
 function renderizarSucessoQuiz(){
-    console.log(quizCriado)
-
     let ulTelaSucesso = document.querySelector(".quadroQuiz")
 
     ulTelaSucesso.innerHTML = ""
@@ -249,14 +248,10 @@ function enviarQuizServidor(){
         levels: levels
     }
 
-    console.log(quizCriado)
-
     title = ""
     image = ""
     questions = []
     levels = []
-
-    console.log(questions)
 
     let promise = axios.post("https://mock-api.driven.com.br/api/v6/buzzquizz/quizzes", quizCriado)
     promise.then(renderizarSucessoQuiz())
@@ -265,6 +260,17 @@ function enviarQuizServidor(){
     })
 }
 
-function renderizarQuizCriado(){
+function encontrarIdQuizCriado(){
+    const promisse = axios.get('https://mock-api.driven.com.br/api/v6/buzzquizz/quizzes');
 
+    let arrayQuizzes
+
+    promisse.then(function (resposta){
+        arrayQuizzes = resposta.data;
+        for (let i = 0; i < arrayQuizzes.length; i++){
+            console.log(arrayQuizzes[i].title)
+        }
+    })
+    
+    console.log(quizCriado.title)
 }
