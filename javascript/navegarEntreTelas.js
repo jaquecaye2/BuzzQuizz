@@ -32,12 +32,6 @@ function scrolarTopPaginaForm(){
     document.querySelector("div.containerTela3-4").scrollTop = 0
 }
 
-function passarParaTela4Form(){
-    scrolarTopPaginaForm()
-    document.querySelector(".containerTela3-3").classList.add("escondido")
-    document.querySelector(".containerTela3-4").classList.remove("escondido")
-}
-
 function abrirPerguntaForm(elemento){
     const divPerguntaSelecionada = elemento.parentNode.parentNode.parentNode
     console.log(divPerguntaSelecionada)
