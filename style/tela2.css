@@ -126,7 +126,11 @@ div.respostaErrada{
     position: relative;
 }
 
-div.respostaErrada div.desfocarDiv{
+div.respostaCerta{
+    position: relative;
+}
+
+div.desfocarDiv{
     position: absolute;
     top: 0;
     background-color: rgba(255, 255, 255, 0.6);

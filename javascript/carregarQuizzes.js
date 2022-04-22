@@ -75,8 +75,8 @@ function renderizarQuizzClicado (resposta) {
                         <img src=${imgResposta} alt="">
                     </div>
                     <h4>${textoResposta}</h4>
-                    <h6 class="resposta-escondida">${isCorrectAnswer}</h6>
                     <div class="desfocarDiv escondido"></div>
+                    <h6 class="resposta-escondida">${isCorrectAnswer}</h6>
                 </div>`;
 
         }
