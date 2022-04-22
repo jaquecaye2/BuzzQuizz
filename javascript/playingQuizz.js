@@ -11,8 +11,22 @@ function verificarResposta(respostaClicada) {
         
         if (arrayRespostas[i] !== respostaClicada) {
             arrayRespostas[i].querySelector(".desfocarDiv").classList.remove("escondido");
-            console.log(arrayRespostas[i].querySelector(".desfocarDiv"));
         }
     
     }
+
+    setTimeout(scrolProximaPergunta, 2000, respostaClicada);
+}
+
+function scrolProximaPergunta (respostaClicada) {
+    let numProximaPergunta;
+    let elementoPerguntaRespondida = respostaClicada.parentNode.parentNode;
+    let arrayPerguntas = document.querySelectorAll(".pergunta");
+    for (let i = 0; i < arrayPerguntas.length; i++) {
+        if (arrayPerguntas[i] === elementoPerguntaRespondida) {
+            numProximaPergunta = i + 1;
+        }
+    }
+
+    arrayPerguntas[numProximaPergunta].scrollIntoView();
 }
