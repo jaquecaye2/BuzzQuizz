@@ -1,3 +1,7 @@
+let qtdPerguntas = 0;
+let objQuizzClicado = {};
+let quizzClicadoLevels = [];
+
 function carregarQuizzes () {
     const promisse = axios.get('https://mock-api.driven.com.br/api/v6/buzzquizz/quizzes');
 
@@ -35,10 +39,12 @@ function carregarQuizClicado (quizzClicado) {
 }
 
 function renderizarQuizzClicado (resposta) {
-    const objQuizz = resposta.data;
-    let quizzClicadoImg = objQuizz.image;
-    let quizzClicadoTitulo = objQuizz.title;
-    let quizzClicadoPerguntas = objQuizz.questions;
+    objQuizzClicado = resposta.data;
+    let quizzClicadoImg = objQuizzClicado.image;
+    let quizzClicadoTitulo = objQuizzClicado.title;
+    let quizzClicadoPerguntas = objQuizzClicado.questions;
+    quizzClicadoLevels = objQuizzClicado.levels;
+    qtdPerguntas = quizzClicadoPerguntas.length;
 
     document.querySelector(".tituloQuizComImagem").innerHTML = "";
 
