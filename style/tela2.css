@@ -28,7 +28,7 @@ div.desfocarImagem{
     right: 0;
     width: 100%;
     height: 100%;
-    background-color: rgba(0, 0, 0, 0.4);
+    background-color: rgba(0, 0, 0, 0.6);
 }
 
 div.tituloQuizComImagem div.tituloQuiz{
@@ -290,6 +290,11 @@ div.botoes button.botaoVoltarHome:hover{
     div.textoRespostaQuiz p{
         font-size: 18px;
     }
+
+    div.pergunta div.tituloPergunta{
+        height: 89px;
+    }
+
 }
 
 @media (max-width: 600px){
@@ -359,5 +364,10 @@ div.botoes button.botaoVoltarHome:hover{
     
     div.textoRespostaQuiz p{
         font-size: 16px;
+    }
+
+    div.resposta div{
+        width: 163px;
+        height: 113px;
     }
 }
