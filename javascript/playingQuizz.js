@@ -108,12 +108,16 @@ function verificarLevel () {
 }
 
 function reiniciarQuizz () {
+    zerarVariaveis ();
+    carregarQuizClicado(elementoQuizzClicado);
+    document.querySelector(".tituloQuizComImagem").scrollIntoView();
+}
+
+function zerarVariaveis () {
     contadorRespostas = 0;
     contadorRespostasCertas = 0;
     imagemResultado = "";
     textoResultado = "";
     tituloResultado = "";
     mediaAcerto = 0;
-    carregarQuizClicado(elementoQuizzClicado);
-    document.querySelector(".tituloQuizComImagem").scrollIntoView();
 }
