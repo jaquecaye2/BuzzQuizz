@@ -60,11 +60,12 @@ function renderizarQuizzClicado (resposta) {
 
     for (let i = 0; i < quizzClicadoPerguntas.length; i++) {
         let pergunta = quizzClicadoPerguntas[i].title;
+        let corPergunta = quizzClicadoPerguntas[i].color;
         let textoHTML = "";
         
         textoHTML += `
             <div class="pergunta">
-                <div class="tituloPergunta corPergunta1">
+                <div class="tituloPergunta" style="background-color:${corPergunta};">
                     <h3>${pergunta}</h3>
                 </div>
                 <div class="containerRespostas">`;
