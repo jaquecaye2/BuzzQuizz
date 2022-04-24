@@ -13,6 +13,7 @@ let quizCriado
 let questions = []
 let answers = []
 let levels = []
+let idQuizCriadoAgora
 let idsMeusQuizes = []
 
 function isValidURL(string) {
@@ -226,8 +227,8 @@ function validacaoTelaNiveisQuiz(){
         document.querySelector(".containerTela3-3").classList.add("escondido")
         document.querySelector(".containerTela3-4").classList.remove("escondido")
         enviarQuizServidor()
-        carregarQuizzes()
-        encontrarIdQuizCriado()
+        //carregarQuizzes()
+        //encontrarIdQuizCriado()
 }
 
 function renderizarSucessoQuiz(){
@@ -256,7 +257,10 @@ function enviarQuizServidor(){
     levels = []
 
     let promise = axios.post("https://mock-api.driven.com.br/api/v6/buzzquizz/quizzes", quizCriado)
-    promise.then(renderizarSucessoQuiz())
+    promise.then( function (){
+        renderizarSucessoQuiz()
+        encontrarIdQuizCriado()
+    })
     promise.catch(function (){
         console.log("DEU MUITO RUIMM")
     })
@@ -271,8 +275,28 @@ function encontrarIdQuizCriado(){
         arrayQuizzes = resposta.data;
         for (let i = 0; i < arrayQuizzes.length; i++){
             if (arrayQuizzes[i].title === quizCriado.title){
-                idsMeusQuizes.push(arrayQuizzes[i].id)
+                idQuizCriadoAgora = arrayQuizzes[i].id
             }
         }
+        console.log(idQuizCriadoAgora)
+
+        // verificar como armazenar todos os ids do quiz criado
+    })
+    promisse.catch(function (resposta){
+        console.log("Deu ruim")
+    })
+}
+
+function visualizarQuiz(){
+    const promisse = axios.get(`https://mock-api.driven.com.br/api/v6/buzzquizz/quizzes/${idQuizCriadoAgora}`)
+    promisse.then(function (resposta){
+        renderizarQuizzClicado(resposta)
+        zerarEscondido()
+        document.querySelector("section.tela2").classList.remove("escondido");
+        document.querySelector("section.tela1").classList.add("escondido");
+        document.querySelector("section.tela2").scrollTop = 0;
+    });
+    promisse.catch(function (){
+        console.log("deu ruim")
     })
 }
