@@ -13,6 +13,7 @@ let quizCriado
 let questions = []
 let answers = []
 let levels = []
+let idsMeusQuizes = []
 
 function isValidURL(string) {
     let res = string.match(/(http(s)?:\/\/.)?(www\.)?[-a-zA-Z0-9@:%._\+~#=]{2,256}\.[a-z]{2,6}\b([-a-zA-Z0-9@:%_\+.~#?&//=]*)/g);
@@ -225,6 +226,7 @@ function validacaoTelaNiveisQuiz(){
         document.querySelector(".containerTela3-3").classList.add("escondido")
         document.querySelector(".containerTela3-4").classList.remove("escondido")
         enviarQuizServidor()
+        carregarQuizzes()
         encontrarIdQuizCriado()
 }
 
@@ -268,9 +270,9 @@ function encontrarIdQuizCriado(){
     promisse.then(function (resposta){
         arrayQuizzes = resposta.data;
         for (let i = 0; i < arrayQuizzes.length; i++){
-            console.log(arrayQuizzes[i].title)
+            if (arrayQuizzes[i].title === quizCriado.title){
+                idsMeusQuizes.push(arrayQuizzes[i].id)
+            }
         }
     })
-    
-    console.log(quizCriado.title)
 }
