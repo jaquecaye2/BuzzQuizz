@@ -15,6 +15,7 @@ let answers = []
 let levels = []
 let idQuizCriadoAgora
 let idsMeusQuizes = []
+let idsMeusQuizesSerializados
 
 function isValidURL(string) {
     let res = string.match(/(http(s)?:\/\/.)?(www\.)?[-a-zA-Z0-9@:%._\+~#=]{2,256}\.[a-z]{2,6}\b([-a-zA-Z0-9@:%_\+.~#?&//=]*)/g);
@@ -278,7 +279,16 @@ function encontrarIdQuizCriado(){
                 idQuizCriadoAgora = arrayQuizzes[i].id
             }
         }
-        console.log(idQuizCriadoAgora)
+
+        let listaMeusIdsSerializada = localStorage.getItem("listaIdsCriados")
+
+        idsMeusQuizes = JSON.parse(listaMeusIdsSerializada)
+
+        idsMeusQuizes.unshift(idQuizCriadoAgora)
+
+        idsMeusQuizesSerializados = JSON.stringify(idsMeusQuizes)
+
+        localStorage.setItem("listaIdsCriados", idsMeusQuizesSerializados)
 
         // verificar como armazenar todos os ids do quiz criado
     })
@@ -299,4 +309,33 @@ function visualizarQuiz(){
     promisse.catch(function (){
         console.log("deu ruim")
     })
+}
+
+function carregarMeusQuizes(){
+    const promisse = axios.get('https://mock-api.driven.com.br/api/v6/buzzquizz/quizzes');
+
+    promisse.then(function (resposta){
+        document.querySelector(".criarQuizz").classList.add("escondido")
+        document.querySelector(".meus-quizzes").classList.remove("escondido")
+
+        document.querySelector(".quizzes-user").innerHTML = "";
+        arrayQuizzes = resposta.data;
+        for (let i = 0; i < arrayQuizzes.length; i++){
+            for (let k = 0; k < idsMeusQuizes.length; k++){
+                if (arrayQuizzes[i].id == idsMeusQuizes[k]){
+                    let quizzImg = arrayQuizzes[i].image;
+                    let quizzTitulo = arrayQuizzes[i].title;
+                    let quizzID = arrayQuizzes[i].id;
+                    
+                    document.querySelector(".quizzes-user").innerHTML += `
+                    <div class="quizz" onclick="abrirQuiz(this)">
+                        <img src=${quizzImg} alt="">
+                        <div class="degrade"></div>
+                        <p>${quizzTitulo}</p>
+                        <h6 class="id-escondido">${quizzID}</h6>
+                    </div>`
+                }
+            }
+        }
+    });
 }

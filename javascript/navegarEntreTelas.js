@@ -15,9 +15,10 @@ function abrirQuiz(quizzClicado){
 }
 
 function voltarHome(){
-    window.location.reload()
+    //window.location.reload()
     zerarVariaveis();
     zerarEscondido();
+    carregarMeusQuizes()
     carregarQuizzes()
     document.querySelector("section.tela1").scrollTop = 0;
 }

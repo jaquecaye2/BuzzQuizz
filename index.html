@@ -20,7 +20,7 @@
         </header>
         <div class="containerTela1">
             <!-- Container Criar Quizz -->
-            <div class="criarQuizz escondido" onclick="criarQuiz()">
+            <div class="criarQuizz" onclick="criarQuiz()">
                 <div class="conteudoCaixaCriarQuiz">
                     <div>
                         <p>Você não criou nenhum quizz ainda :(</p>
@@ -30,7 +30,7 @@
             </div>
             <!-- Container Seus Quizzes -->
                 <!-- OBS: Quando tiver quizzes proprios criados, remover a classe "escondido" -->
-            <div class="quizzes margin-top">
+            <div class="quizzes meus-quizzes margin-top escondido">
                 <div class="titleQuizzes">
                     <h2>Seus Quizzes</h2>
                     <button onclick="criarQuiz()">+</button>
@@ -224,9 +224,6 @@
             <div class="paginaCriarQuiz">
                 <h5>Seu quizz está pronto!</h5>
                 <div class="quadroQuiz">
-                    <img src="images/image5.jpg" alt="">
-                    <div class="degrade"></div>
-                    <p>O quão Potterhead é você?</p>
                 </div>
 
                 <button onclick="visualizarQuiz()" class="botaoAcessarQuizz">Acessar Quizz</button>
