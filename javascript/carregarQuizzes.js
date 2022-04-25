@@ -1,6 +1,7 @@
 let qtdPerguntas = 0;
 let objQuizzClicado = {};
 let quizzClicadoLevels = [];
+let elementoQuizzClicado;
 
 function carregarQuizzes () {
     const promisse = axios.get('https://mock-api.driven.com.br/api/v6/buzzquizz/quizzes');
@@ -10,8 +11,6 @@ function carregarQuizzes () {
 
 function renderizarQuizzes(resposta) {
     const arrayQuizzes = resposta.data;
-    console.log(arrayQuizzes);
-    console.log(arrayQuizzes[0]);
     
     document.querySelector(".quizzes-outros").innerHTML = "";
     
@@ -33,6 +32,7 @@ function renderizarQuizzes(resposta) {
 }
 
 function carregarQuizClicado (quizzClicado) {
+    elementoQuizzClicado = quizzClicado;
     const quizzClicadoID = quizzClicado.querySelector(".id-escondido").innerHTML;
     const promisse = axios.get(`https://mock-api.driven.com.br/api/v6/buzzquizz/quizzes/${quizzClicadoID}`);
     promisse.then(renderizarQuizzClicado);
@@ -40,6 +40,7 @@ function carregarQuizClicado (quizzClicado) {
 
 function renderizarQuizzClicado (resposta) {
     objQuizzClicado = resposta.data;
+    console.log(objQuizzClicado);
     let quizzClicadoImg = objQuizzClicado.image;
     let quizzClicadoTitulo = objQuizzClicado.title;
     let quizzClicadoPerguntas = objQuizzClicado.questions;
@@ -59,11 +60,12 @@ function renderizarQuizzClicado (resposta) {
 
     for (let i = 0; i < quizzClicadoPerguntas.length; i++) {
         let pergunta = quizzClicadoPerguntas[i].title;
+        let corPergunta = quizzClicadoPerguntas[i].color;
         let textoHTML = "";
         
         textoHTML += `
             <div class="pergunta">
-                <div class="tituloPergunta corPergunta1">
+                <div class="tituloPergunta" style="background-color:${corPergunta};">
                     <h3>${pergunta}</h3>
                 </div>
                 <div class="containerRespostas">`;

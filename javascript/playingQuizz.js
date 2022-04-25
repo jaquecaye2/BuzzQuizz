@@ -68,7 +68,7 @@ function verificarFimQuizz () {
             </div>
             </div>
             <div class="botoes">
-                <button class="botaoReiniciar">Reiniciar Quizz</button>
+                <button class="botaoReiniciar" onclick="reiniciarQuizz()">Reiniciar Quizz</button>
                 <button class="botaoVoltarHome" onclick="voltarHome()">Voltar para home</button>
             </div>`
 
@@ -105,4 +105,19 @@ function verificarLevel () {
             tituloResultado = quizzClicadoLevels[i].title;
         }
     }
+}
+
+function reiniciarQuizz () {
+    zerarVariaveis ();
+    carregarQuizClicado(elementoQuizzClicado);
+    document.querySelector(".tituloQuizComImagem").scrollIntoView();
+}
+
+function zerarVariaveis () {
+    contadorRespostas = 0;
+    contadorRespostasCertas = 0;
+    imagemResultado = "";
+    textoResultado = "";
+    tituloResultado = "";
+    mediaAcerto = 0;
 }
