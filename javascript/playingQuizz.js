@@ -43,7 +43,7 @@ function scrolProximaPergunta (respostaClicada) {
     }
 
     if (numProximaPergunta <= arrayPerguntas.length - 1) {
-        arrayPerguntas[numProximaPergunta].scrollIntoView();
+        arrayPerguntas[numProximaPergunta].scrollIntoView({behavior: "smooth"});
     }
 
     verificarFimQuizz();
@@ -56,23 +56,23 @@ function verificarFimQuizz () {
 
         document.querySelector(".containerTela2").innerHTML += `
             <div class="respostaQuiz">
-            <div class="tituloResposta corResposta">
-                <h3>${mediaAcerto}% de acerto: ${tituloResultado}</h3>
-            </div>
-            <div class="textoResposta">
-                <div class="imagemResposta">
-                    <img src=${imagemResultado} alt="">
+                <div class="tituloResposta corResposta">
+                    <h3>${mediaAcerto}% de acerto: ${tituloResultado}</h3>
                 </div>
-            <div class="textoRespostaQuiz">
-                <p>${textoResultado}</p>
-            </div>
+                <div class="textoResposta">
+                    <div class="imagemResposta">
+                        <img src=${imagemResultado} alt="">
+                    </div>
+                <div class="textoRespostaQuiz">
+                    <p>${textoResultado}</p>
+                </div>
             </div>
             <div class="botoes">
                 <button class="botaoReiniciar" onclick="reiniciarQuizz()">Reiniciar Quizz</button>
                 <button class="botaoVoltarHome" onclick="voltarHome()">Voltar para home</button>
             </div>`
 
-        document.querySelector(".respostaQuiz").scrollIntoView();
+        document.querySelector(".respostaQuiz").scrollIntoView({behavior: "smooth"});
 
     }
 }
@@ -110,7 +110,7 @@ function verificarLevel () {
 function reiniciarQuizz () {
     zerarVariaveis ();
     carregarQuizClicado(elementoQuizzClicado);
-    document.querySelector(".tituloQuizComImagem").scrollIntoView();
+    document.querySelector(".tituloQuizComImagem").scrollIntoView({behavior: "smooth"});
 }
 
 function zerarVariaveis () {
