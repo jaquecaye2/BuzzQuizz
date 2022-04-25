@@ -15,7 +15,7 @@ function abrirQuiz(quizzClicado){
 }
 
 function voltarHome(){
-    //window.location.reload()
+    window.location.reload()
     zerarVariaveis();
     zerarEscondido();
     carregarMeusQuizes()

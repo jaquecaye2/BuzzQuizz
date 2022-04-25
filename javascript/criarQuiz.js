@@ -17,6 +17,17 @@ let idQuizCriadoAgora
 let idsMeusQuizes = []
 let idsMeusQuizesSerializados
 
+function meusQuizesTela1(){
+    let listaMeusIdsSerializada = localStorage.getItem("listaIdsCriados")
+
+    if(listaMeusIdsSerializada === null){
+        document.querySelector(".criarQuizz").classList.remove("escondido")
+        document.querySelector(".meus-quizzes").classList.add("escondido")
+    } else {
+        carregarMeusQuizes()
+    }
+}
+
 function isValidURL(string) {
     let res = string.match(/(http(s)?:\/\/.)?(www\.)?[-a-zA-Z0-9@:%._\+~#=]{2,256}\.[a-z]{2,6}\b([-a-zA-Z0-9@:%_\+.~#?&//=]*)/g);
     return (res !== null)
@@ -33,7 +44,7 @@ function validacaoTelaInfoBasicas(){
     quantPerguntas = document.querySelector("#quantPerguntas").value
     quantNiveis = document.querySelector("#quantNiveis").value
 
-    /*if (tituloQuiz.length < 20 || tituloQuiz.length > 65) {
+    if (tituloQuiz.length < 20 || tituloQuiz.length > 65) {
         alert("Informação inserida incorretamente, tente novamente")
     } else if (quantPerguntas < 3) {
         alert("Informação inserida incorretamente, tente novamente")
@@ -41,12 +52,12 @@ function validacaoTelaInfoBasicas(){
         alert("Informação inserida incorretamente, tente novamente")
     } else if (!isValidURL(URLimagemQuiz)) {
         alert("Informação inserida incorretamente, tente novamente")
-    } else {}
-        */scrolarTopPaginaForm()
+    } else {
+        scrolarTopPaginaForm()
         document.querySelector(".containerTela3-1").classList.add("escondido")
         document.querySelector(".containerTela3-2").classList.remove("escondido")
         renderizarCriarPerguntas()
-    
+    }
 }
 
 function renderizarCriarPerguntas(){
@@ -95,29 +106,29 @@ function validacaoTelaPerguntasQuiz(){
         respostasCriarQuiz = perguntas[i].querySelectorAll(".respostaCriarQuiz")
         urlsImagem = perguntas[i].querySelectorAll(".urlImagem")
 
-        /*if (textoPergunta.length < 20) {
+        if (textoPergunta.length < 20) {
             alert(`Texto da pergunta inserido incorretamente na pergunta ${i+1}, tente novamente`)
             cont ++
         }
         if (!isValidColor(corPergunta)) {
             alert(`Cor da pergunta inserida incorretamente na pergunta ${i+1}, tente novamente`)
             cont ++
-        }*/
-
+        }
+        
         let answer
 
         for (let k = 0; k < respostasCriarQuiz.length; k++){
             let respostaCriarQuiz = respostasCriarQuiz[k].value
             let urlImagem = urlsImagem[k].value
 
-            /*if (respostaCriarQuiz === "") {
+            if (respostaCriarQuiz === "") {
                 alert(`Resposta inserida incorretamente na pergunta ${i+1}, resposta${k+1}, tente novamente`)
                 cont ++
             }
             if (!isValidURL(urlImagem)) {
                 alert(`URL inserida incorretamente na pergunta ${i+1}, resposta${k+1}, tente novamente`)
                 cont ++
-            }*/
+            }
 
             if (k === 0){
                 answer = {
@@ -196,7 +207,7 @@ function validacaoTelaNiveisQuiz(){
 
         porcentagens.push(porcentagemAcertoMin)
 
-        /*if (tituloNivel.length < 10) {
+        if (tituloNivel.length < 10) {
             alert(`Título do nível inserido incorretamente na pergunta ${i+1}, tente novamente`)
             cont ++
         }
@@ -211,7 +222,7 @@ function validacaoTelaNiveisQuiz(){
         if (descricaoNivel.length < 30) {
             alert(`Descrição do nível inserida incorretamente na pergunta ${i+1}, tente novamente`)
             cont ++
-        }*/
+        }
 
         let level = {
             title: tituloNivel,
@@ -223,13 +234,12 @@ function validacaoTelaNiveisQuiz(){
         levels.push(level)
     }
 
-    /*if (cont === 0 && porcentagens.indexOf("0") !== -1){}*/
+    if (cont === 0 && porcentagens.indexOf("0") !== -1){
         scrolarTopPaginaForm()
         document.querySelector(".containerTela3-3").classList.add("escondido")
         document.querySelector(".containerTela3-4").classList.remove("escondido")
         enviarQuizServidor()
-        //carregarQuizzes()
-        //encontrarIdQuizCriado()
+    }
 }
 
 function renderizarSucessoQuiz(){
@@ -280,17 +290,19 @@ function encontrarIdQuizCriado(){
             }
         }
 
-        let listaMeusIdsSerializada = localStorage.getItem("listaIdsCriados")
+        if (idsMeusQuizes.length === 0){
+            idsMeusQuizes.push(idQuizCriadoAgora)
+        } else {
+            let listaMeusIdsSerializada = localStorage.getItem("listaIdsCriados")
+            idsMeusQuizes = JSON.parse(listaMeusIdsSerializada)
+            idsMeusQuizes.unshift(idQuizCriadoAgora)
+        }
 
-        idsMeusQuizes = JSON.parse(listaMeusIdsSerializada)
-
-        idsMeusQuizes.unshift(idQuizCriadoAgora)
+        console.log(idsMeusQuizes)
 
         idsMeusQuizesSerializados = JSON.stringify(idsMeusQuizes)
 
         localStorage.setItem("listaIdsCriados", idsMeusQuizesSerializados)
-
-        // verificar como armazenar todos os ids do quiz criado
     })
     promisse.catch(function (resposta){
         console.log("Deu ruim")
@@ -319,6 +331,11 @@ function carregarMeusQuizes(){
         document.querySelector(".meus-quizzes").classList.remove("escondido")
 
         document.querySelector(".quizzes-user").innerHTML = "";
+
+        let listaMeusIdsSerializada = localStorage.getItem("listaIdsCriados")
+
+        idsMeusQuizes = JSON.parse(listaMeusIdsSerializada)
+
         arrayQuizzes = resposta.data;
         for (let i = 0; i < arrayQuizzes.length; i++){
             for (let k = 0; k < idsMeusQuizes.length; k++){
@@ -339,3 +356,5 @@ function carregarMeusQuizes(){
         }
     });
 }
+
+meusQuizesTela1()
