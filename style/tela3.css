@@ -198,10 +198,6 @@ div.paginaCriarQuiz button.botaoVoltarHome:hover{
 }
 
 @media (max-width: 1100px){
-    
-}
-
-@media (max-width: 600px){
     div.containerTela3-1{
         width: 100%;
     }
@@ -211,6 +207,10 @@ div.paginaCriarQuiz button.botaoVoltarHome:hover{
     }
     
     div.containerTela3-3{
+        width: 100%;
+    }
+    
+    div.perguntas{
         width: 100%;
     }
 
