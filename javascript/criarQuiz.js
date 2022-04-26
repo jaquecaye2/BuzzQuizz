@@ -108,10 +108,12 @@ function validacaoTelaPerguntasQuiz(){
 
         if (textoPergunta.length < 20) {
             alert(`Texto da pergunta inserido incorretamente na pergunta ${i+1}, tente novamente`)
+            questions = []
             cont ++
         }
         if (!isValidColor(corPergunta)) {
             alert(`Cor da pergunta inserida incorretamente na pergunta ${i+1}, tente novamente`)
+            questions = []
             cont ++
         }
         
@@ -123,10 +125,12 @@ function validacaoTelaPerguntasQuiz(){
 
             if (respostaCriarQuiz === "") {
                 alert(`Resposta inserida incorretamente na pergunta ${i+1}, resposta${k+1}, tente novamente`)
+                questions = []
                 cont ++
             }
             if (!isValidURL(urlImagem)) {
                 alert(`URL inserida incorretamente na pergunta ${i+1}, resposta${k+1}, tente novamente`)
+                questions = []
                 cont ++
             }
 
@@ -147,13 +151,15 @@ function validacaoTelaPerguntasQuiz(){
             answers.push(answer)
         }
 
-        let question = {
-            title: textoPergunta,
-            color: corPergunta,
-            answers: answers
+        if (cont === 0){
+            let question = {
+                title: textoPergunta,
+                color: corPergunta,
+                answers: answers
+            }
+    
+            questions.push(question)
         }
-
-        questions.push(question)
 
         answers = []
     }
@@ -211,27 +217,29 @@ function validacaoTelaNiveisQuiz(){
             alert(`Título do nível inserido incorretamente na pergunta ${i+1}, tente novamente`)
             cont ++
         }
-        if (porcentagemAcertoMin < 0 || porcentagemAcertoMin > 100) {
+        else if(porcentagemAcertoMin < 0 || porcentagemAcertoMin > 100) {
             alert(`Porcentagem de acerto mínimo inserido incorretamente na pergunta ${i+1}, tente novamente`)
             cont ++
         }
-        if (!isValidURL(URLimagemNivel)) {
+        else if (!isValidURL(URLimagemNivel)) {
             alert(`URL inserida incorretamente na pergunta ${i+1}, tente novamente`)
             cont ++
         }
-        if (descricaoNivel.length < 30) {
+        else if (descricaoNivel.length < 30) {
             alert(`Descrição do nível inserida incorretamente na pergunta ${i+1}, tente novamente`)
             cont ++
         }
 
-        let level = {
-            title: tituloNivel,
-            image: URLimagemNivel,
-            text: descricaoNivel,
-            minValue: porcentagemAcertoMin
+        else {
+            let level = {
+                title: tituloNivel,
+                image: URLimagemNivel,
+                text: descricaoNivel,
+                minValue: porcentagemAcertoMin
+            } 
+            levels.push(level)
         }
 
-        levels.push(level)
     }
 
     if (cont === 0 && porcentagens.indexOf("0") !== -1){

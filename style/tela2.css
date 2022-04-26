@@ -93,6 +93,10 @@ div.resposta{
     width: 48%;
     margin: 9px 0px;
     cursor: pointer;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
 }
 
 div.resposta div{
